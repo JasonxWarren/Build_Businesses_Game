@@ -1,0 +1,20 @@
+#top-menu {
+    margin: 0 auto; 
+    width: full;
+    background-color: gray;
+    display: grid;
+    grid-template-columns: 2fr 2fr .5fr;
+}
+.columns {
+    display: grid;
+    grid-template-columns:  1.5fr 1.5fr .5fr;
+}
+.column-one {
+
+
+}
+.buttons {
+    display: grid;
+background-color: green;
+color: white;
+}
