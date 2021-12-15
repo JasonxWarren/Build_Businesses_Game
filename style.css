@@ -2,15 +2,39 @@
 #top-menu {
     margin: 0 auto; 
     width: full;
-    background-color: rgb(41, 38, 38);
+    background-color: rgb(192, 177, 177);
+    border-style: solid;
+    border-color:lightskyblue;
     display: grid;
     grid-template-columns: 2fr 2fr .5fr;
 }
 .columns {
     display: grid;
-    grid-template-columns:  1.5fr 1.5fr .5fr;
+    grid-template-columns:  1.25fr 1.5fr 1fr;
 }
-.column-one {;
+#first-column {
+    text-justify: center;
+    background-image: url("https://previews.123rf.com/images/siraphol/siraphol1502/siraphol150205996/36703824-old-metal-steel-background.jpg?fj=1") ;
+    background-size: cover;
+    background-position: center;
+   
+}
+#help-info {
+    background-color: rgb(192, 177, 177);
+    max-width: fit-content;
+    border-radius: 10%;
+    max-height: fit-content;
+
+
+}
+#second-column {
+    border-color: lightskyblue;
+    border-style: solid;
+    background-color: rgb(192, 177, 177)
+}
+#third-column {
+    background-color: black;
+    border-style: groove;
 }
 #help-info {
     font-weight: bold;

@@ -20,6 +20,7 @@ After the user clicks, display pop up, stating your turn is over.
 
 */
 let score= 10000;
+let Inventory= 0;
 //ocument.getElementById('Units').innerHTML=`${score}`;
 function setScore() {
     document.getElementById('Units').innerHTML=`${score}`;
@@ -28,39 +29,59 @@ function setScore() {
  //$('#Units').val(score);
 }
 setScore();
-
+function setInventory() {
+    document.getElementById('Inventory').innerHTML=`${Inventory}`;
+   return;
+  //document.getElementById(x).value= "${score}";
+ //$('#Units').val(score);
+}
+setInventory()
+//let inventoryStart=document.querySelector('#Inventory');
 let newScore;
+let newInventory;
 let colorSelector= document.querySelector("#colorChanger");
-let colorChanger=colorSelector.style.color="";
+let colorChanger=colorSelector.style.color="green";
 function colorHealth(score) {
-    if (score>=10000) {;
-    let colorChanger=colorSelector.style.color="green";
+    if (score>=10000) {
+    colorChanger=colorSelector.style.color="green";
+    console.log("green");
     return;}
-    if (score<10000 && score>7500) {
-    let colorChanger=colorSelector.style.color="adff2f"; //greenyellow
+    if (score<10000 && score>=7500) {
+    colorChanger=colorSelector.style.color="#adff2f"; //greenyellow
+    console.log("green yellow");
     return;}
-    if (score<7500 && score>5000) {
-    let colorChanger=colorSelector.style.color="yellow"; 
+    if (score<7500 && score>=5000) {
+    colorChanger=colorSelector.style.color="yellow"; 
+    console.log("yellow");
     return;}
     if (score<5000 && score>2500){
-    let colorChanger=colorSelector.style.color="ff7f50"; //coral red orange
+    colorChanger=colorSelector.style.color="ff7f50"; //coral red orange
+    console.log("red-orange");
     return;}
     if(score<2500){
     let colorChanger=colorSelector.style.color="red";
+    console.log("red");
     return; }
     }
+//colorHealth(score);
     $('#button50').on('click', (event)=> {
-let newScore=score-(50*10);
-document.querySelector('#Units').innerHTML=`${newScore}`;
-//$('Units').innerHTML=`${newScore}`;
-colorHealth(newScore);
-//newInventory=Inventory+50;
-//$('Inventory').innerHTML(newInventory)
+        let newPurchase=50;
+let newScore=score-(newPurchase*10);
+ document.querySelector('#Units').innerHTML=`${newScore}`;
+  score= newScore;
+  console.log(score);
+  let newInventory=Inventory+newPurchase;
+document.querySelector('#Inventory').innerHTML=`${newInventory}`;
+Inventory=newInventory;
+// document.getElementById('#Units').innerHTML;
+console.log(score);
+colorHealth(score);
 return;
 console.log(newScore);
     }
+    
     )
-    console.log();
+    //console.log();
 
     // $('#button100').on('click', (event)=> {
 
@@ -71,7 +92,7 @@ console.log(newScore);
 
 
 
-totalQuan=0;
+//totalQuan=0;
 let turn=0;
 let gameStatus;
 let maxp=130; //maximum profitability is 1.30 aka 30 percent margins
