@@ -19,27 +19,57 @@ After the user clicks, display pop up, stating your turn is over.
 
 
 */
-const score= 10000;
-//let colorSelector= document.querySelectorAll("#colorChanger")
-//let colorChanger=colorSelector.style.color="green";
-function colorHealth(round) {
-    if (this.score>=10000) {;
+let score= 10000;
+//ocument.getElementById('Units').innerHTML=`${score}`;
+function setScore() {
+    document.getElementById('Units').innerHTML=`${score}`;
+   return;
+  //document.getElementById(x).value= "${score}";
+ //$('#Units').val(score);
+}
+setScore();
+
+let newScore;
+let colorSelector= document.querySelector("#colorChanger");
+let colorChanger=colorSelector.style.color="";
+function colorHealth(score) {
+    if (score>=10000) {;
     let colorChanger=colorSelector.style.color="green";
     return;}
-    if (this.score<10000 && this.score>7500) {
+    if (score<10000 && score>7500) {
     let colorChanger=colorSelector.style.color="adff2f"; //greenyellow
     return;}
-    if (this.score<7500 && this.score>5000) {
+    if (score<7500 && score>5000) {
     let colorChanger=colorSelector.style.color="yellow"; 
     return;}
-    if (this.score<5000 && this.score>2500){
+    if (score<5000 && score>2500){
     let colorChanger=colorSelector.style.color="ff7f50"; //coral red orange
     return;}
-    if(this.score<2500){
-    let colorChanger=colorSelector.style.color="ff7f50";
-    return;}
+    if(score<2500){
+    let colorChanger=colorSelector.style.color="red";
+    return; }
     }
-    
+    $('#button50').on('click', (event)=> {
+let newScore=score-(50*10);
+document.querySelector('#Units').innerHTML=`${newScore}`;
+//$('Units').innerHTML=`${newScore}`;
+colorHealth(newScore);
+//newInventory=Inventory+50;
+//$('Inventory').innerHTML(newInventory)
+return;
+console.log(newScore);
+    }
+    )
+    console.log();
+
+    // $('#button100').on('click', (event)=> {
+
+    // }
+    // $('#button200').on('click', (event)=> {
+
+    // }
+
+
 
 totalQuan=0;
 let turn=0;

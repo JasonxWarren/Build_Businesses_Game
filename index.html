@@ -6,14 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="game.js" defer></script>
+    <script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
     <title>Build a Business Game</title>
 </head>
 <body>
-   
+   <div id="colorChanger">
     <div id="top-menu">
 <h1>Build an online Business?</h1>
-<h2>Units</h3>
-<h3> Inventory</h3>
+<dl>Units</dl>
+<dd id="Units"></dd>
+<dl> Inventory</dl>
+<dd id="Inventory"></dd>
 
     </div>
     <div class="buttons"></div>
@@ -22,18 +29,19 @@
     <div class="columns">
        
         <div id="first-column">
-            <button class="buttons">Buy Product Quantity 25</button>
-            <button class="buttons">Buy Product Quantity 50</button>
-            <button class="buttons">Buy Product Quantity 100</button>
+        <h3 id="help-info"> 1 product=10 Units</h3>
+            <button id="button50">Buy Product Quantity 50</button>
+            <button id="button100">Buy Product Quantity 100</button>
+            <button id="button200">Buy Product Quantity 200</button>
          </div>
          <div id="second-column">
-            <h1 class="header">Prompting text here</h1>
+            <h1 class="header"></h1>
          </div>
          <div id="third-column">
             <h1 class="header"> Can you build a successful online business</h1>
          </div>
 
     </div>
-    
+    </div>
 </body>
 </html>

@@ -1,7 +1,8 @@
+
 #top-menu {
     margin: 0 auto; 
     width: full;
-    background-color: gray;
+    background-color: rgb(41, 38, 38);
     display: grid;
     grid-template-columns: 2fr 2fr .5fr;
 }
@@ -9,12 +10,23 @@
     display: grid;
     grid-template-columns:  1.5fr 1.5fr .5fr;
 }
-.column-one {
-
-
+.column-one {;
 }
-.buttons {
+#help-info {
+    font-weight: bold;
+}
+#button50 {
     display: grid;
-background-color: green;
+background-color: gray;
+color: white;
+}
+#button100 {
+    display: grid;
+background-color: gray;
+color: white;
+}
+#button200 {
+    display: grid;
+background-color: gray;
 color: white;
 }
