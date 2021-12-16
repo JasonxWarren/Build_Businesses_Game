@@ -2,9 +2,10 @@
 #top-menu {
     margin: 0 auto; 
     width: full;
-    background-color: rgb(192, 177, 177);
+    background: rgb(106,162,196);
+background: linear-gradient(0deg, rgba(106,162,196,1) 2%, rgba(192,177,177,1) 58%, rgba(4,4,4,1) 99%);
     border-style: solid;
-    border-color:lightskyblue;
+    border-color: rgba(106,162,196,1);
     display: grid;
     grid-template-columns: 2fr 2fr .5fr;
 }
@@ -28,29 +29,53 @@
 
 }
 #second-column {
-    border-color: lightskyblue;
+    background: rgb(4,4,4);
+background: linear-gradient(0deg, rgba(4,4,4,1) 0%, rgba(192,177,177,1) 58%, rgba(106,162,196,1) 99%);
+    border-color: rgba(106,162,196,1);
     border-style: solid;
-    background-color: rgb(192, 177, 177)
 }
 #third-column {
-    background-color: black;
-    border-style: groove;
+    background: rgb(0,0,0);
+    background: linear-gradient(315deg, rgba(0,0,0,1) 22%, rgba(192,177,177,1) 100%);
+    border-color:black;
+    border-style:groove
 }
 #help-info {
     font-weight: bold;
+    display: flex;
+    margin: auto;
+    margin-top: 0%;
 }
 #button50 {
-    display: grid;
+    display: flex;
 background-color: gray;
-color: white;
+color: lightskyblue;
+border: 1px outset black;
+margin:auto;
+margin-top: 5%;
 }
 #button100 {
-    display: grid;
+    display: flex;
 background-color: gray;
-color: white;
+color: lightskyblue;
+border: 1px outset black;
+margin:auto;
+margin-top: 2%;
 }
 #button200 {
-    display: grid;
+    display: flex;
 background-color: gray;
-color: white;
+color: lightskyblue;
+border: 1px outset black;
+margin: auto;
+margin-top: 2%;
+}
+#nextTurn {
+    border: 1px outset black;
+    display: flex;
+    background-color: skyblue;
+    color: black;
+    margin: auto;
+    margin-top: 5%;
+
 }
