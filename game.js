@@ -19,8 +19,10 @@ After the user clicks, display pop up, stating your turn is over.
 
 
 */
+$("#nextTurn").hide();
 let score= 10000;
 let Inventory= 0;
+let risidual= 200;
 //ocument.getElementById('Units').innerHTML=`${score}`;
 function setScore() {
     document.getElementById('Units').innerHTML=`${score}`;
@@ -73,14 +75,66 @@ let newScore=score-(newPurchase*10);
   let newInventory=Inventory+newPurchase;
 document.querySelector('#Inventory').innerHTML=`${newInventory}`;
 Inventory=newInventory;
-// document.getElementById('#Units').innerHTML;
 console.log(score);
 colorHealth(score);
+$("#nextTurn").show();
 return;
 console.log(newScore);
     }
-    
     )
+    $('#button100').on('click', (event)=> {
+        let newPurchase=100;
+let newScore=score-(newPurchase*10);
+ document.querySelector('#Units').innerHTML=`${newScore}`;
+  score= newScore;
+  console.log(score);
+  let newInventory=Inventory+newPurchase;
+document.querySelector('#Inventory').innerHTML=`${newInventory}`;
+Inventory=newInventory;
+console.log(score);
+colorHealth(score);
+$("#nextTurn").show();
+return;
+console.log(newScore);
+    }
+    )
+    $('#button200').on('click', (event)=> {
+        let newPurchase=200;
+let newScore=score-(newPurchase*10);
+ document.querySelector('#Units').innerHTML=`${newScore}`;
+  score= newScore;
+  console.log(score);
+  let newInventory=Inventory+newPurchase;
+document.querySelector('#Inventory').innerHTML=`${newInventory}`;
+Inventory=newInventory;
+console.log(score);
+colorHealth(score);
+$("#nextTurn").show();
+return;
+console.log(newScore);
+    }
+    )
+    let numberSales= .2; //how much inventory sells per turn
+    let profitPerTurn;
+    function salesData(InvData,unitsData) {
+    profitPerTurn= (InvData)*(numberSales*(1))*profitability*(10);
+    updateUnits=score+profitPerTurn;
+    console.log(updateUnits);
+    document.querySelector('#Units').innerHTML=`${updateUnits}`;
+    score=updateUnits;
+    //$('#Units').innerHTML=`${updateUnits}`;
+    //console.log(profitPerTurn);
+    return profitPerTurn;
+    }
+    let x;
+    let y;
+    
+    $('#nextTurn').on('click', (event)=> {
+let x=Inventory;
+let y=Units;
+$('#newTurn').html(`Your had some sales! You made ${salesData(x,y)} Units to be exact`)
+colorHealth(score);
+    })
     //console.log();
 
     // $('#button100').on('click', (event)=> {
@@ -97,7 +151,7 @@ let turn=0;
 let gameStatus;
 let maxp=130; //maximum profitability is 1.30 aka 30 percent margins
 let minp=110; //minimum profitability is 1.1 aka 10 percent margins
-let profitability=(Math.floor(Math.random()*(maxp-minp+1)+minp))/100;
+const profitability=(Math.floor(Math.random()*(maxp-minp+1)+minp))/100;
 console.log(profitability);
 // function for the odds of an external event happening on a given turn
  function badLuck(round){ 
@@ -109,7 +163,7 @@ let odds= (Math.random()*100);
  return gameStatus= false;
     }}
 
-console.log(badLuck())
+//console.log(badLuck())
     function gameScript(round){
         if(round==0) {
            console.log("normal game start text") //change middle text to read information regarding getting going
