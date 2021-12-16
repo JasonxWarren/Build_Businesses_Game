@@ -130,10 +130,14 @@ console.log(newScore);
     let y;
     
     $('#nextTurn').on('click', (event)=> {
+ turn++;
+ badLuck(turn);
+ 
 let x=Inventory;
 let y=Units;
-$('#newTurn').html(`Your had some sales! You made ${salesData(x,y)} Units to be exact`)
+$('#newTurn').html(`Your had some sales! You made ${salesData(x,y)} Units to be exact!`)
 colorHealth(score);
+console.log(turn);
     })
     //console.log();
 
@@ -154,7 +158,7 @@ let minp=110; //minimum profitability is 1.1 aka 10 percent margins
 const profitability=(Math.floor(Math.random()*(maxp-minp+1)+minp))/100;
 console.log(profitability);
 // function for the odds of an external event happening on a given turn
- function badLuck(round){ 
+ function badLuck(turn){ 
 let odds= (Math.random()*100);
     if (odds<80) { //0-79 
  return gameStatus= true;
