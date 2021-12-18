@@ -1,4 +1,5 @@
 
+
 #top-menu {
     margin: 0 auto; 
     width: full;
@@ -6,19 +7,23 @@
 background: linear-gradient(0deg, rgba(106,162,196,1) 2%, rgba(192,177,177,1) 58%, rgba(4,4,4,1) 99%);
     border-style: solid;
     border-color: rgba(106,162,196,1);
+
 }
 .game-stats {
     column-count: 2;
     text-align: center;
+    margin-bottom: 0%;
+    margin-top: 0%;
+    background-color: white;
 }
    
 dl { text-align: center;
-    font-size: 24px;
+    font-size: 20px;
     
 }
 dd {
     text-align: center;
-    font-size: 28pt;
+    font-size: 24pt;
 }
 .columns {
     display: grid;
@@ -47,9 +52,9 @@ background: linear-gradient(0deg, rgba(4,4,4,1) 0%, rgba(192,177,177,1) 58%, rgb
 }
 #third-column {
     background: rgb(0,0,0);
-    background: linear-gradient(315deg, rgba(0,0,0,1) 22%, rgba(192,177,177,1) 100%);
+    background: linear-gradient(315deg, rgb(164, 160, 160) 22%, rgb(239, 244, 247) 100%);
     border-color:black;
-    border-style:groove
+    border-style:groove;
 }
 #help-info {
     font-weight: bold;
@@ -89,4 +94,11 @@ margin-top: 2%;
     margin: auto;
     margin-top: 5%;
 
+}
+.winner,.loser {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+    max-height: 50%;
+    max-width: 50%;
 }

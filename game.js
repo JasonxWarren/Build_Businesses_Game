@@ -19,6 +19,8 @@ After the user clicks, display pop up, stating your turn is over.
 
 
 */
+$("#winner").hide();
+$("#loser").hide();
 $("#nextTurn").hide();
 let score= 10000;
 let Inventory= 0;
@@ -41,27 +43,33 @@ setInventory()
 //let inventoryStart=document.querySelector('#Inventory');
 let newScore;
 let newInventory;
+document.getElementById("colorChanger").style.textShadow = "1px 1px 4px ";
 let colorSelector= document.querySelector("#colorChanger");
 let colorChanger=colorSelector.style.color="green";
 function colorHealth(score) {
     if (score>=10000) {
     colorChanger=colorSelector.style.color="green";
+    document.getElementById("colorChanger").style.textShadow = "1px 1px 6px white";
     console.log("green");
     return;}
     if (score<10000 && score>=7500) {
     colorChanger=colorSelector.style.color="#adff2f"; //greenyellow
+    document.getElementById("colorChanger").style.textShadow = "1px 1px 6px black";
     console.log("green yellow");
     return;}
     if (score<7500 && score>=5000) {
     colorChanger=colorSelector.style.color="yellow"; 
+    document.getElementById("colorChanger").style.textShadow = "1px 1px 6px black";
     console.log("yellow");
     return;}
     if (score<5000 && score>2500){
     colorChanger=colorSelector.style.color="#ff7f50"; //coral red orange
+    document.getElementById("colorChanger").style.textShadow = "1px 1px 6px black";
     console.log("red-orange");
     return;}
     if(score<2500){
     let colorChanger=colorSelector.style.color="red";
+    document.getElementById("colorChanger").style.textShadow = "1px 1px 6px wheat";
     console.log("red");
     return; }
     }
@@ -228,9 +236,11 @@ let odds= (Math.random()*100);
         if (turn==12) {
             if (score>=10000){
                 $('#newTurn').html("You won! Congratuations!"); 
+                $('#winner').show();
             }
             else if (score<=10000){
                 $('#newTurn').html("You lost, better luck next time!");
+                $('#loser').show();
             }
             console.log("win or lose");
             return;
@@ -254,7 +264,7 @@ let odds= (Math.random()*100);
         if (turn==12) {
            $('#turnInfo').html(`Its Turn ${turn}!!!`)
        }}
-       problemsArr= ["Due to Supply shortages, we weren't able to have any sales this Turn", "A novel virus has hit our distributors, no Sales this Turn", "We were hit with a blizzard, no sales this Turn"] 
+       problemsArr= ["Due to Supply shortages, we weren't able to have any sales this Turn", "A virus has hit our distributors, no Sales this Turn", "We were hit with a blizzard, no sales this Turn"] 
     //}
    //console.log(gameScript(1));
    //console.log(gameScript(12));
