@@ -6,8 +6,19 @@
 background: linear-gradient(0deg, rgba(106,162,196,1) 2%, rgba(192,177,177,1) 58%, rgba(4,4,4,1) 99%);
     border-style: solid;
     border-color: rgba(106,162,196,1);
-    display: grid;
-    grid-template-columns: 2fr 2fr .5fr;
+}
+.game-stats {
+    column-count: 2;
+    text-align: center;
+}
+   
+dl { text-align: center;
+    font-size: 24px;
+    
+}
+dd {
+    text-align: center;
+    font-size: 28pt;
 }
 .columns {
     display: grid;

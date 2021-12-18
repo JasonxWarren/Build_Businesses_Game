@@ -95,7 +95,6 @@ console.log(score);
 colorHealth(score);
 $("#nextTurn").show();
 return;
-console.log(newScore);
     }
     )
     $('#button200').on('click', (event)=> {
@@ -111,13 +110,39 @@ console.log(score);
 colorHealth(score);
 $("#nextTurn").show();
 return;
-console.log(newScore);
+    }
+    )
+   let Ad=false;
+    let Adcost;
+    $('#buttonA').on('click', (event2)=> {
+        let Adcost=200;
+        let Ad=true;
+let newScore=score-(Adcost);
+ document.querySelector('#Units').innerHTML=`${newScore}`;
+  score= newScore;
+  console.log(score);
+  //let newInventory=Inventory+newPurchase;
+//document.querySelector('#Inventory').innerHTML=`${newInventory}`;
+//Inventory=newInventory;
+console.log(score);
+colorHealth(score);
+$("#nextTurn").show();
+console.log(`Ads are `+Ad);
+return Ad;
     }
     )
     let numberSales= .2; //how much inventory sells per turn
     let profitPerTurn;
-    function salesData(InvData,unitsData) {
-    profitPerTurn= (InvData)*(numberSales*(1))*profitability*(10);
+    function salesData(InvData,Ad) {
+        // if (Ad=true){
+        //     a=2; //2x multiplier on inventory sold
+        //      }
+        //      if (Ad=false){
+        //          a=1
+        //      }
+        //      console.log(a);
+        let a=1;
+    profitPerTurn= Math.round((InvData)*(numberSales*(a))*profitability*(10));
     updateUnits=score+profitPerTurn-(risidual);
     console.log(updateUnits);
     document.querySelector('#Units').innerHTML=`${updateUnits}`;
@@ -133,37 +158,38 @@ console.log(newScore);
         document.querySelector('#header').innerHTML="You've sold out of items buy more";
         $('#header').hide(5000,"linear");
     }
+    //let a=a-1;
     return profitPerTurn;
     }
     let x;
     let y;
+    let a; //inventory sold multiplier
+    let b; //Sales profitability multiplier
+    let c; //Sales 
     
     $('#nextTurn').on('click', (event)=> {
  turn++;
+ turnTitle(turn);
  $('#header').show();
  badLuck(turn);
  if (gameStatus==true) {
 let x=Inventory;
-let y=Units;
-$('#newTurn').html(`Your had some sales! You made ${salesData(x,y)} Units to be exact!`)
+//let y=Units;
+$('#newTurn').html(`Your had some sales! ${salesData(x,Ad)} Units to be exact!`)
 colorHealth(score);
 console.log(turn);
  }
  else if (gameStatus==false) {
+     let badEvent=problemsArr[Math.floor(Math.random()*problemsArr.length)];
      console.log("false")
-     $('#newTurn').html(`Big accident no sales this Turn`);
+     $('#newTurn').html(`${badEvent}`);
  }
+ 
 gameScript(turn);
-
     })
     //console.log();
 
-    // $('#button100').on('click', (event)=> {
 
-    // }
-    // $('#button200').on('click', (event)=> {
-
-    // }
 
 
 
@@ -177,10 +203,10 @@ console.log(profitability);
 // function for the odds of an external event happening on a given turn
  function badLuck(turn){ 
 let odds= (Math.random()*100);
-    if (odds<90) { //0-79 
+    if (odds<=80) { //0-79 
  return gameStatus= true;
     }
-    else if (odds>90) {
+    else if (odds>80) {
  return gameStatus= false;
     }}
 
@@ -212,12 +238,27 @@ let odds= (Math.random()*100);
             //change text to you lose if score<10000
         }
     };
-    //function TurnTitle(turn){
-     
+    function turnTitle(turn){
+        if (turn == 0) {
+            $('#turnInfo').html(`Its Turn 0, Can you build a successful online business?`)
+        }
+        if (turn >= 1 && turn<=5) {
+            $('#turnInfo').html(`Its Turn ${turn}, its still early, keep buying more Product!`)
+        }
+        if (turn>=6 && turn<=9) {
+           $('#turnInfo').html(`Its Turn ${turn}, you can do it!`)
+        }
+        if (turn>=10 && turn<12) {
+           $('#turnInfo').html(`Its Turn ${turn}, we don't have a lot of time left!`)
+        }
+        if (turn==12) {
+           $('#turnInfo').html(`Its Turn ${turn}!!!`)
+       }}
+       problemsArr= ["Due to Supply shortages, we weren't able to have any sales this Turn", "A novel virus has hit our distributors, no Sales this Turn", "We were hit with a blizzard, no sales this Turn"] 
     //}
-   console.log(gameScript(1));
+   //console.log(gameScript(1));
    //console.log(gameScript(12));
-   console.log(gameScript(0));
+   //console.log(gameScript(0));
 
 
 
