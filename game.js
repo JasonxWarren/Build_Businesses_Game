@@ -19,6 +19,7 @@ After the user clicks, display pop up, stating your turn is over.
 
 
 */
+$("#newGame").hide();
 $("#winner").hide();
 $("#loser").hide();
 $("#nextTurn").hide();
@@ -155,7 +156,7 @@ return Ad;
     console.log(updateUnits);
     document.querySelector('#Units').innerHTML=`${updateUnits}`;
     score=updateUnits;
-    updateInventory=Inventory*((1-numberSales)*(1));
+    updateInventory=Math.round(Inventory*((1-numberSales)*(1)));
     if (updateInventory>=10){
     document.querySelector('#Inventory').innerHTML=`${updateInventory}`;
     Inventory=updateInventory;
@@ -237,10 +238,12 @@ let odds= (Math.random()*100);
             if (score>=10000){
                 $('#newTurn').html("You won! Congratuations!"); 
                 $('#winner').show();
+                playAgain(turn);
             }
             else if (score<=10000){
                 $('#newTurn').html("You lost, better luck next time!");
                 $('#loser').show();
+                playAgain(turn);
             }
             console.log("win or lose");
             return;
@@ -262,9 +265,25 @@ let odds= (Math.random()*100);
            $('#turnInfo').html(`Its Turn ${turn}, we don't have a lot of time left!`)
         }
         if (turn==12) {
-           $('#turnInfo').html(`Its Turn ${turn}!!!`)
+           $('#turnInfo').html(`Its Turn ${turn}!!! Click play again!`)
        }}
-       problemsArr= ["Due to Supply shortages, we weren't able to have any sales this Turn", "A virus has hit our distributors, no Sales this Turn", "We were hit with a blizzard, no sales this Turn"] 
+       problemsArr= ["Due to Supply shortages, we weren't able to have any sales this Turn", "A virus has hit our distributors, no Sales this Turn", "We were hit with a blizzard, no sales this Turn"];
+       function playAgain(turn) {
+           $('#button50').hide();
+           $('#button100').hide();
+           $('#button200').hide();
+           $('#buttonA').hide();
+           $('#button50').hide();
+           $("#nextTurn").hide();
+           $("#buttonSale").hide();
+           $("#help-info").hide();
+           $("#newGame").show();
+       }
+       $('#newGame').on('click', (event)=> {
+       location.reload();
+return;
+    }
+    )
     //}
    //console.log(gameScript(1));
    //console.log(gameScript(12));
