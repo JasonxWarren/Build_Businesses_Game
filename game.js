@@ -1,6 +1,4 @@
 //Documentation
-
-
 /* psuedo  
 the parameters we need are the total starting units, which will equal 10,000
 Set the random profitability of the item between 1.1 and 1.3
@@ -13,11 +11,6 @@ Initially set background to be green.
 Apply function to determine based on number of units, what color the button will be.
 Set the input Buttons to Buy product
 After the user clicks, display pop up, stating your turn is over.
-
-
-
-
-
 */
 $("#newGame").hide();
 $("#winner").hide();
@@ -88,7 +81,6 @@ console.log(score);
 colorHealth(score);
 $("#nextTurn").show();
 return;
-console.log(newScore);
     }
     )
     $('#button100').on('click', (event)=> {
@@ -121,28 +113,25 @@ $("#nextTurn").show();
 return;
     }
     )
-   let Ad=false;
-    let Adcost;
-    $('#buttonA').on('click', (event2)=> {
-        let Adcost=200;
-        let Ad=true;
-let newScore=score-(Adcost);
- document.querySelector('#Units').innerHTML=`${newScore}`;
-  score= newScore;
-  console.log(score);
-  //let newInventory=Inventory+newPurchase;
-//document.querySelector('#Inventory').innerHTML=`${newInventory}`;
-//Inventory=newInventory;
-console.log(score);
-colorHealth(score);
-$("#nextTurn").show();
-console.log(`Ads are `+Ad);
-return Ad;
-    }
-    )
+//    let Ad=false; // future work for allowing users to buy Ads
+//     let Adcost; // additional feature
+//     $('#buttonA').on('click', (event2)=> {
+//         let Adcost=200;
+//         let Ad=true;
+// let newScore=score-(Adcost);
+//  document.querySelector('#Units').innerHTML=`${newScore}`;
+//   score= newScore;
+//   console.log(score);
+// console.log(score);
+// colorHealth(score);
+// $("#nextTurn").show();
+// console.log(`Ads are `+Ad);
+// return Ad;
+//     }
+//     )
     let numberSales= .2; //how much inventory sells per turn
     let profitPerTurn;
-    function salesData(InvData,Ad) {
+    function salesData(InvData) {
         // if (Ad=true){
         //     a=2; //2x multiplier on inventory sold
         //      }
@@ -172,9 +161,9 @@ return Ad;
     }
     let x;
     let y;
-    let a; //inventory sold multiplier
-    let b; //Sales profitability multiplier
-    let c; //Sales 
+    let a; //inventory sold multiplier additional feature for later
+    let b; //Sales profitability multiplier additional feature for later
+    let c; //Sales  additional feature for later
     
     $('#nextTurn').on('click', (event)=> {
  turn++;
@@ -184,7 +173,7 @@ return Ad;
  if (gameStatus==true) {
 let x=Inventory;
 //let y=Units;
-$('#newTurn').html(`Your had some sales! ${salesData(x,Ad)} Units to be exact!`)
+$('#newTurn').html(`Your had some sales! ${salesData(x)} Units to be exact!`)
 colorHealth(score);
 console.log(turn);
  }
@@ -196,13 +185,7 @@ console.log(turn);
  
 gameScript(turn);
     })
-    //console.log();
 
-
-
-
-
-//totalQuan=0;
 let turn=0;
 let gameStatus;
 let maxp=145; //maximum profitability is 1.30 aka 30 percent margins
@@ -272,10 +255,7 @@ let odds= (Math.random()*100);
            $('#button50').hide();
            $('#button100').hide();
            $('#button200').hide();
-           $('#buttonA').hide();
-           $('#button50').hide();
            $("#nextTurn").hide();
-           $("#buttonSale").hide();
            $("#help-info").hide();
            $("#newGame").show();
        }
@@ -284,10 +264,7 @@ let odds= (Math.random()*100);
 return;
     }
     )
-    //}
-   //console.log(gameScript(1));
-   //console.log(gameScript(12));
-   //console.log(gameScript(0));
+    
 
 
 
